@@ -7,7 +7,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    requirement: "",
   });
 
   const handleInputChange = (e) => {
@@ -43,10 +43,11 @@ function Contact() {
       // Handle errors, e.g., show an error message
       console.error("Error submitting form:", error.message);
     }
+    alert("Thank you for contacting us. Please check your email inbox");
   };
 
   return (
-    <section >
+    <section>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
@@ -85,7 +86,7 @@ function Contact() {
                 />
               </div>
 
-              <div >
+              <div>
                 <div>
                   <label className="sr-only" htmlFor="email">
                     Email
@@ -162,7 +163,7 @@ function Contact() {
               </div> */}
 
               <div>
-                <label className="sr-only" htmlFor="message">
+                <label className="sr-only" htmlFor="requirement">
                   Requirements
                 </label>
 
@@ -170,9 +171,9 @@ function Contact() {
                   className="w-full rounded-lg border border-gray-200 p-3 text-sm"
                   placeholder="How can AIOverflow help you?"
                   rows="8"
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                  id="requirement"
+                  name="requirement"
+                  value={formData.requirement}
                   onChange={handleInputChange}
                 ></textarea>
               </div>

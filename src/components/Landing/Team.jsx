@@ -15,8 +15,8 @@ function Team() {
             project is infused with innovation and excellence.
           </p>
         </div>
-        <div class="flex items-center justify-center flex-wrap gap-4 p-4">
-          <div class="w-1/3 bg-gray-50 p-4 rounded-md text-center mx-auto">
+        <div class="flex items-center justify-center flex-wrap gap-4 p-4 w-full">
+          <div class="w-full sm:w-1/3 bg-gray-50 p-4 rounded-md text-center mx-auto">
             <img
               src="https://drive.google.com/uc?export=view&id=1_DzxybV0leHOo_ICvbsP_XUcnL1HW6F8"
               class="w-24 h-24 mx-auto rounded-full object-cover transition duration-200 hover:scale-110"
@@ -41,7 +41,7 @@ function Team() {
               <i class="fa-brands fa-dribbble fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
             </div>
           </div>
-          <div class="w-1/3 bg-gray-50 p-4 rounded-md text-center mx-auto">
+          <div class="w-full sm:w-1/3 bg-gray-50 p-4 rounded-md text-center mx-auto">
             <img
               src="https://drive.google.com/uc?export=view&id=1f8WjNjbq0brWevbbrx91RUyTz9TffSeG"
               class="w-24 h-24 mx-auto rounded-full object-cover transition duration-200 hover:scale-110"
