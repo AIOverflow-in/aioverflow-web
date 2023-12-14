@@ -22,7 +22,7 @@ function Landing() {
        <Metrics />
        <Testimonials />
        <Mentoring />
-       <Team  />
+       {/* <Team  /> */}
        
     </div>
   )

@@ -1,5 +1,6 @@
 import { Carousel } from "@material-tailwind/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -22,12 +23,12 @@ const AboutSection = () => {
           </p>
 
           <div class="mt-4 md:mt-8">
-            <a
-              href="#"
+            <Link
+              to="/contact"
               class="inline-block rounded bg-prim px-12 py-3 text-xl font-medium text-white transition hover:bg-sec focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Get Started Today
-            </a>
+            </Link>
           </div>
         </div>
 
