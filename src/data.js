@@ -265,7 +265,7 @@ const metricsContent = {
   ],
 };
 
-const testimonialsContent = {
+const testimonialsContent = { 
   title: "What our clients/mentors have said",
   testimonials: [
     {
