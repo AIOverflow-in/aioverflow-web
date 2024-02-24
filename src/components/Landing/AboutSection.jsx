@@ -23,12 +23,14 @@ const AboutSection = () => {
           </p>
 
           <div class="mt-4 md:mt-8">
-            <Link
-              to="/contact"
+            <a
+              href="https://tally.so/r/3qAvQk"
+              target="_blank"
+              rel="noreferrer"
               class="inline-block rounded bg-prim px-12 py-3 text-xl font-medium text-white transition hover:bg-sec focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Get Started Today
-            </Link>
+            </a>
           </div>
         </div>
 
