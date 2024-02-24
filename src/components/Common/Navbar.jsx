@@ -61,12 +61,14 @@ const Navbar = () => {
           Home
         </Link>
 
-        <Link
-          to="/contact"
+        <a
+          href="https://tally.so/r/3qAvQk"
+          target="_blank"
+          rel="noreferrer"
           className="block text-white transition-colors duration-300 md:px-6 hover:text-prim font-medium"
         >
           Contact
-        </Link>
+        </a>
       </div>
     </nav>
   );
