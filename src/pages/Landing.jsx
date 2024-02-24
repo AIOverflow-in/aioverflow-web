@@ -9,6 +9,7 @@ import Testimonials from '../components/Landing/Testimonials'
 import Achievements from '../components/Landing/Achievements'
 import Mentoring from '../components/Landing/Mentoring'
 import Team from '../components/Landing/Team'
+import Clients from '../components/Landing/Clients'
 
 function Landing() {
   return (
@@ -18,6 +19,7 @@ function Landing() {
        <OneLiner />
        <Projects />
        <Achievements />
+       <Clients />
        <Services />
        <Metrics />
        <Testimonials />

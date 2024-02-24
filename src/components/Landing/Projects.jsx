@@ -28,7 +28,7 @@ const Projects = () => {
                 className={`transition-all duration-500 hover:scale-105 ${additionalClass}`}
                 style={{ flexDirection: flexDirection }}
               >
-                <span className="text-white text-xl">{project.name}</span>
+                <span className="text-white">{project.name}</span>
                 <img
                   className="object-cover object-top w-full rounded-lg shadow-md shadow-gray-200 h-80 xl:h-96"
                   src={project.imgUrl}

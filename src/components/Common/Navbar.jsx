@@ -9,7 +9,7 @@ const Navbar = () => {
       <Link to="/" className="flex gap-2 items-center">
         <img
           className="w-8 h-7 md:h-6"
-          src="https://drive.google.com/uc?export=view&id=1KpS4DhI5wWcvXPQxDZsr8-mth7y0Cz84"
+          src="https://firebasestorage.googleapis.com/v0/b/aioverflow-images.appspot.com/o/logo_for_website%2FAI_Logo-.png?alt=media&token=702a24fb-69f7-4b03-b1bd-6b51e9907cb9"
         ></img>
         <span className="text-2xl font-bold">Overflow</span>
       </Link>
