@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
+  --color-muted: #0a0a0a;
+  --color-muted-foreground: #8a8a8a;
+
+  --color-card: #060606;
+  --color-card-foreground: #ffffff;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-input: rgba(255, 255, 255, 0.12);
+
+  --color-primary: #ffffff;
+  --color-primary-foreground: #000000;
+  --color-accent: #ffffff;
+  --color-accent-foreground: #000000;
+  --color-ring: rgba(255, 255, 255, 0.6);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    max-width: 80rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .font-mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Display headline scale — bigger than default Tailwind */
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  /* High-contrast inverse panel (white bg, black text) */
+  .panel-invert {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  /* Subtle dot-grid background, masks at edges */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+  }
+
+  .dot-grid-mask {
+    mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 30%,
+      black 30%,
+      transparent 80%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 30%,
+      black 30%,
+      transparent 80%
+    );
+  }
+
+  /* Fine line grid (Vercel/Linear-style) */
+  .line-grid {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      );
+    background-size: 64px 64px;
+  }
+
+  /* Soft white radial spotlight (Anthropic-ish) */
+  .spotlight-white {
+    background: radial-gradient(
+      ellipse 800px 500px at 50% 0%,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 60%
+    );
+  }
+
+  /* Film grain — applied as overlay layer */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hairline divider used between sections */
+  .hairline-top {
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  /* Subtle hover lift — for cards */
+  .lift {
+    transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 400ms ease, background-color 400ms ease;
+  }
+  .lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Underlined link with animated underline */
+  .link-underline {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+  }
+}
