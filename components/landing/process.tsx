@@ -10,7 +10,7 @@ export function Process() {
     >
       <div className="container-page">
         <Reveal className="max-w-3xl">
-          <SectionLabel number="02">How we work</SectionLabel>
+          <SectionLabel number="04">How we work</SectionLabel>
           <h2 className="text-display mt-6 text-5xl md:text-7xl">
             Fewer ideas, finished better.
           </h2>

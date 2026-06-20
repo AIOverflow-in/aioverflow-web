@@ -121,7 +121,11 @@ export async function getServerContext(): Promise<ServerContext> {
 
   const ua = parseUA(h.get("user-agent"));
 
-  // Optional ISP / org lookup. Skips for missing or local IPs.
+  // Optional ISP / org lookup via the third-party ipapi.co service. Off by
+  // default — sending a visitor's IP to a third party should be a deliberate,
+  // disclosed choice. Enable with ENABLE_IP_ENRICHMENT=true. Vercel's own geo
+  // headers (no third party) are always used regardless.
+  const enrichmentEnabled = process.env.ENABLE_IP_ENRICHMENT === "true";
   const isLocal =
     !ip ||
     ip === "127.0.0.1" ||
@@ -129,7 +133,7 @@ export async function getServerContext(): Promise<ServerContext> {
     ip.startsWith("192.168.") ||
     ip.startsWith("10.") ||
     ip.startsWith("172.16.");
-  const ipapi = isLocal ? null : await lookupIpapi(ip);
+  const ipapi = enrichmentEnabled && !isLocal ? await lookupIpapi(ip) : null;
 
   return {
     ip,

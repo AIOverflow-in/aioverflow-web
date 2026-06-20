@@ -19,13 +19,14 @@ export function ProductGrid() {
     >
       <div className="container-page">
         <Reveal className="max-w-3xl">
-          <SectionLabel number="01">Portfolio</SectionLabel>
+          <SectionLabel number="02">Our own products</SectionLabel>
           <h2 className="text-display mt-6 text-5xl md:text-7xl">
-            Products built under the AI&nbsp;Overflow umbrella.
+            We don&apos;t just consult on AI. We run it.
           </h2>
           <p className="mt-6 max-w-xl text-lg text-foreground/70">
-            Each is its own brand and team — unified by the same standard for
-            craft and shipping speed.
+            These are our own brands — built, shipped, and operated in
+            production. They&apos;re also the clearest proof of what we can
+            build for you.
           </p>
         </Reveal>
 

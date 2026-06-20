@@ -4,10 +4,13 @@ import { ArrowUpRight } from "lucide-react";
 import { products } from "@/content/products";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionLabel } from "@/components/shared/section-label";
+import { Work } from "@/components/landing/work";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description: "AI products built and operated by AI Overflow.",
+  title: "Products & work",
+  description:
+    "Our own AI products — ScribeDesk and RetailOS — plus custom AI solutions we've built and run for clients.",
+  alternates: { canonical: "/products" },
 };
 
 const statusLabel: Record<string, string> = {
@@ -25,13 +28,14 @@ export default function ProductsPage() {
         <div aria-hidden className="absolute inset-0 spotlight-white" />
 
         <div className="container-page relative py-20 md:py-28">
-          <SectionLabel>Portfolio</SectionLabel>
+          <SectionLabel>Products &amp; work</SectionLabel>
           <h1 className="text-display mt-6 text-6xl md:text-9xl">
             Our products.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-foreground/70 md:text-xl">
-            Each is its own brand and team — unified by the same standard for
-            craft and shipping speed.
+            Our own brands, built and operated in production — and the clearest
+            proof of what we can build for you. Custom client work follows
+            below.
           </p>
         </div>
       </section>
@@ -73,6 +77,8 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
+
+      <Work />
     </>
   );
 }

@@ -1,17 +1,17 @@
 import { company } from "@/content/company";
 
 export function Marquee() {
-  const items = [...company.partners, ...company.partners];
+  const items = [...company.recognition, ...company.recognition];
 
   return (
     <section
-      aria-label="Trusted by"
-      data-section="partners"
-      className="relative overflow-hidden border-b border-border py-12"
+      aria-label="Recognition"
+      data-section="recognition"
+      className="relative overflow-hidden border-b border-border py-16 md:py-24"
     >
-      <div className="container-page mb-8">
+      <div className="container-page mb-10 md:mb-12">
         <p className="font-mono-label text-foreground/60">
-          Worked with teams at
+          Where we&apos;ve competed &amp; placed
         </p>
       </div>
 
@@ -25,11 +25,11 @@ export function Marquee() {
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent md:w-40"
         />
 
-        <div className="flex w-max animate-marquee gap-16 px-8 md:gap-24">
+        <div className="flex w-max animate-marquee items-center gap-16 px-8 py-2 leading-none md:gap-24">
           {items.map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="text-display whitespace-nowrap text-3xl text-foreground/55 md:text-5xl"
+              className="text-display whitespace-nowrap text-3xl leading-none text-foreground/55 md:text-5xl"
             >
               {name}
             </span>

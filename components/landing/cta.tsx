@@ -15,11 +15,11 @@ export function CTA() {
         <Reveal>
           <div className="grid items-end gap-12 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <SectionLabel number="03">Get in touch</SectionLabel>
+              <SectionLabel number="05">Get in touch</SectionLabel>
               <h2 className="text-display mt-6 text-6xl md:text-8xl">
-                Have an idea?
+                Have a problem?
                 <br />
-                Let&apos;s build it.
+                Let&apos;s see if AI fits.
               </h2>
             </div>
             <div className="md:pb-4">

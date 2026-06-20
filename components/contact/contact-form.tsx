@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useRef } from "react";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { sendContactMessage, type ContactState } from "@/app/contact/actions";
@@ -71,6 +72,16 @@ export function ContactForm() {
             <AlertCircle size={16} /> {state.error}
           </p>
         )}
+
+        <p className="text-xs text-foreground/45 text-pretty">
+          When you submit, we receive your message plus some context (the page
+          you were on and basic device info) to help us reply. We honor Do Not
+          Track. See our{" "}
+          <Link href="/privacy" className="link-underline text-foreground/70">
+            privacy policy
+          </Link>
+          .
+        </p>
       </div>
     </form>
   );

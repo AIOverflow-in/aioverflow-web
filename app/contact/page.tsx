@@ -5,7 +5,9 @@ import { company } from "@/content/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with AI Overflow.",
+  description:
+    "Tell AI Overflow what you're working on. Book a discovery call about custom AI solutions, automation, or one of our products.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

@@ -7,7 +7,9 @@ import { company } from "@/content/company";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "What AI Overflow is, why we exist, and how we work.",
+  description:
+    "AI Overflow is a team of AI engineers who build production AI — our own products and custom solutions for businesses. Here's why we exist and how we work.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -21,10 +23,16 @@ export default function AboutPage() {
         <div className="container-page relative py-20 md:py-28">
           <SectionLabel>About</SectionLabel>
           <h1 className="text-display mt-6 max-w-5xl text-5xl md:text-9xl">
-            We turn AI capability into AI products.
+            We turn AI capability into things people use.
           </h1>
           <p className="mt-10 max-w-2xl text-lg text-foreground/70 md:text-xl text-pretty">
             {company.description}
+          </p>
+          <p className="mt-6 max-w-2xl text-sm text-foreground/45 text-pretty">
+            Background: the team has reached {company.competitionRecord.finals}{" "}
+            national & international hackathon and competition finals, with{" "}
+            {company.competitionRecord.topThree} top-three finishes — where a lot
+            of the muscle behind our products was first built.
           </p>
         </div>
       </section>
@@ -36,9 +44,11 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-2xl text-foreground/85 md:text-3xl text-pretty">
-              We build small, focused product teams around each brand. Each team
-              owns its product end-to-end — research, engineering, design, and
-              operations — and ships in tight feedback loops with real users.
+              We&apos;re a small, senior team that owns the whole arc —
+              research, engineering, design, and operations. We build our own
+              products under their own brands, and we build custom solutions for
+              clients. Same people, same standard, tight feedback loops with
+              real users either way.
             </p>
           </Reveal>
         </div>

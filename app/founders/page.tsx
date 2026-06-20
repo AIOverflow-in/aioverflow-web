@@ -6,7 +6,9 @@ import { SectionLabel } from "@/components/shared/section-label";
 
 export const metadata: Metadata = {
   title: "Founders",
-  description: "The team behind AI Overflow.",
+  description:
+    "Meet the co-founders behind AI Overflow — Subhanu Sankar Roy and Chethan Reddy — who build and operate production AI systems.",
+  alternates: { canonical: "/founders" },
 };
 
 export default function FoundersPage() {

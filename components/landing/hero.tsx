@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { ParticleField } from "@/components/landing/particle-field";
 import { CyclingWord } from "@/components/landing/cycling-word";
@@ -10,7 +10,7 @@ import { company } from "@/content/company";
 
 const ease = [0.2, 0.8, 0.2, 1] as const;
 
-const cycle = ["AI products", "ML systems", "AI agents", "AI tooling"] as const;
+const cycle = ["works", "ships", "automates", "scales"] as const;
 
 // Reveal helper: clip-path mask + slight Y for headline lines.
 function HeadlineLine({
@@ -48,8 +48,9 @@ export function Hero() {
       <div aria-hidden className="absolute inset-0 spotlight-white" />
 
       <div className="container-page relative">
-        <div className="grid min-h-[calc(100vh-4rem)] grid-cols-12 items-center py-20 md:py-28">
-          <div className="col-span-12 md:col-span-11 lg:col-span-10">
+        <div className="grid min-h-[calc(100vh-4rem)] grid-cols-12 items-center gap-x-8 gap-y-14 py-20 md:py-28">
+          {/* Left: headline, pitch, CTAs */}
+          <div className="col-span-12 lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,50 +60,67 @@ export function Hero() {
               AI · Overflow / 2026
             </motion.div>
 
-            <h1 className="text-display mt-6 text-[clamp(3rem,9vw,9rem)]">
+            <h1 className="text-display mt-6 text-[clamp(2.75rem,7vw,7rem)]">
               <HeadlineLine delay={0.05}>We build</HeadlineLine>
-              <HeadlineLine delay={0.18}>
-                <CyclingWord words={cycle} />
-              </HeadlineLine>
+              <HeadlineLine delay={0.18}>AI that</HeadlineLine>
               <HeadlineLine delay={0.31}>
-                <span className="inline-flex items-baseline gap-3 italic">
-                  that ship.
-                  <motion.span
-                    initial={{ opacity: 0, x: -6, y: 6 }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.6, ease, delay: 0.95 }}
-                    aria-hidden
-                    className="hidden md:inline-block"
-                  >
-                    <ArrowDownRight className="h-[0.7em] w-[0.7em] shrink-0 stroke-[1.5]" />
-                  </motion.span>
+                <span className="italic">
+                  <CyclingWord words={cycle} />
                 </span>
               </HeadlineLine>
             </h1>
 
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease, delay: 0.55 }}
-              className="mt-10 grid max-w-3xl gap-8 md:grid-cols-[1fr_auto] md:items-end"
+              className="mt-8 max-w-xl text-pretty text-lg text-foreground/70 md:text-xl"
             >
-              <p className="text-pretty text-lg text-foreground/70 md:text-xl">
-                {company.description}
-              </p>
+              We build custom AI for businesses — and run our own AI products.
+              We start by finding where it actually fits.
+            </motion.p>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <Link href="/products" className={buttonVariants({ size: "lg" })}>
-                  See our products <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="/contact"
-                  className={buttonVariants({ size: "lg", variant: "outline" })}
-                >
-                  Work with us
-                </Link>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease, delay: 0.68 }}
+              className="mt-9 flex flex-wrap items-center gap-3"
+            >
+              <Link href="/contact" className={buttonVariants({ size: "lg" })}>
+                Work with us <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/services"
+                className={buttonVariants({ size: "lg", variant: "outline" })}
+              >
+                What we do
+              </Link>
             </motion.div>
           </div>
+
+          {/* Right: orienting index (large screens) — fills the space and
+              states the dual identity up front */}
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease, delay: 0.8 }}
+            className="hidden lg:flex lg:col-span-5 lg:justify-end"
+          >
+            <div className="w-full max-w-sm border-l border-border pl-8">
+              <p className="font-mono-label text-foreground/50">For your business</p>
+              <p className="mt-3 text-pretty text-foreground/85">
+                Custom AI — workflows, agentic automation, and full products,
+                built and run together with you.
+              </p>
+              <div className="mt-8 border-t border-border pt-6">
+                <p className="font-mono-label text-foreground/50">We run our own</p>
+                <ul className="mt-3 flex flex-col gap-2 text-foreground/85">
+                  <li>ScribeDesk — clinical AI scribe</li>
+                  <li>RetailOS — pharmacy POS</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         <motion.div

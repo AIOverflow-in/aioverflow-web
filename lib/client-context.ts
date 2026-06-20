@@ -62,7 +62,38 @@ interface NavigatorConnection {
   saveData?: boolean;
 }
 
+// Returned when the visitor has Do Not Track enabled: we record only what we
+// strictly need to follow up (the page they were on + any campaign tags), and
+// drop the device/connection/engagement fingerprint entirely.
+function minimalContext(): ClientContext {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    userAgent: "",
+    language: "",
+    languages: [],
+    screen: { width: 0, height: 0, dpr: 0 },
+    viewport: { width: 0, height: 0 },
+    prefersDark: false,
+    doNotTrack: true,
+    timezone: "",
+    connection: { effectiveType: null, type: null, downlink: null, rtt: null, saveData: null },
+    engagement: { timeOnPageSeconds: 0, scrollDepth: 0, sections: [], visitNumber: 1 },
+    pageUrl: window.location.href,
+    referrer: "",
+    utm: {
+      source: params.get("utm_source"),
+      medium: params.get("utm_medium"),
+      campaign: params.get("utm_campaign"),
+      term: params.get("utm_term"),
+      content: params.get("utm_content"),
+    },
+  };
+}
+
 export function collectClientContext(): ClientContext {
+  // Honor Do Not Track: if the visitor asked not to be tracked, respect it.
+  if (dntValue() === true) return minimalContext();
+
   const engagement = getEngagement();
   const params = new URLSearchParams(window.location.search);
   const conn =

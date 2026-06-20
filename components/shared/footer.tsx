@@ -53,6 +53,8 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-mono-label text-foreground/50">Company</h4>
             <ul className="mt-4 text-sm">
+              <li><Link href="/services" className={colLink}>Services</Link></li>
+              <li><Link href="/blog" className={colLink}>Blog</Link></li>
               <li><Link href="/founders" className={colLink}>Founders</Link></li>
               <li><Link href="/about" className={colLink}>About</Link></li>
               <li><Link href="/contact" className={colLink}>Contact</Link></li>
@@ -99,7 +101,15 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-page flex flex-col items-start justify-between gap-3 py-6 font-mono-label text-foreground/55 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
-          <p>Designed & engineered in-house.</p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
+              Privacy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-foreground">
+              Terms
+            </Link>
+            <span className="hidden md:inline">Designed &amp; engineered in-house.</span>
+          </div>
         </div>
       </div>
     </footer>
