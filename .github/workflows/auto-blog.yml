@@ -29,7 +29,7 @@ jobs:
       - name: Generate blog post
         run: node scripts/generate-blog-post.mjs
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Commit and push
         run: |

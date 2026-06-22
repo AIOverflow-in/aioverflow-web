@@ -3,9 +3,9 @@
  * Automated daily blog post generator for aioverflow.com.
  *
  * Usage:
- *   ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-blog-post.mjs
+ *   OPENAI_API_KEY=sk-... node scripts/generate-blog-post.mjs
  *
- * Picks today's topic from a rotating list, calls Claude API to write a short
+ * Picks today's topic from a rotating list, calls OpenAI API to write a short
  * SEO-friendly post in AI Overflow's voice, writes it as a TypeScript file in
  * content/blog/posts/, then regenerates content/blog/index.ts.
  *
@@ -70,33 +70,35 @@ function toVarName(filename) {
   return stripped.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 }
 
-// ─── Claude API call ───────────────────────────────────────────────────────
-async function callClaude(systemPrompt, userMessage) {
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) throw new Error("ANTHROPIC_API_KEY is not set");
+// ─── OpenAI API call ──────────────────────────────────────────────────────
+async function callOpenAI(systemPrompt, userMessage) {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) throw new Error("OPENAI_API_KEY is not set");
 
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
+      Authorization: `Bearer ${key}`,
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-haiku-4-5-20251001",
+      model: "gpt-4o-mini",
       max_tokens: 2048,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userMessage }],
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage },
+      ],
     }),
   });
 
   if (!res.ok) {
     const body = await res.text();
-    throw new Error(`Anthropic API ${res.status}: ${body}`);
+    throw new Error(`OpenAI API ${res.status}: ${body}`);
   }
 
   const data = await res.json();
-  return data.content[0].text;
+  return data.choices[0].message.content;
 }
 
 // ─── Regenerate index.ts from posts directory ─────────────────────────────
@@ -195,7 +197,7 @@ Remember: output ONLY the JSON object, nothing else.`;
 
 let postData;
 try {
-  const raw = await callClaude(systemPrompt, userMessage);
+  const raw = await callOpenAI(systemPrompt, userMessage);
 
   // Strip any accidental markdown fences
   const cleaned = raw.replace(/^```json\s*/i, "").replace(/\s*```$/, "").trim();
