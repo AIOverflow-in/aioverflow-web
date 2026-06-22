@@ -163,7 +163,7 @@ console.log(`AI Overflow Blog Generator`);
 console.log(`Date: ${dateStr}`);
 console.log(`Topic: ${topic}`);
 console.log(`Author: ${authorSlug}`);
-console.log(`Calling Claude API...`);
+console.log("Calling OpenAI API...");
 
 const systemPrompt = `You are a ghostwriter for AI Overflow, a two-person AI engineering company based in India.
 We build production AI — both our own products (ScribeDesk for clinical documentation, Sell OS for pharmacy POS) and custom AI solutions for businesses.
@@ -185,7 +185,7 @@ Output ONLY valid JSON (no markdown fences, no commentary before or after), with
   "title": "The post title",
   "description": "One sentence meta description, 120–155 chars",
   "tags": ["Tag One", "Tag Two", "Tag Three"],
-  "body": "Full Markdown body (use \\n for newlines, escape backticks as \\` if needed)"
+  "body": "Full Markdown body string (use actual newline escapes \\n for line breaks)"
 }`;
 
 const userMessage = `Write a blog post on this topic: ${topic}
