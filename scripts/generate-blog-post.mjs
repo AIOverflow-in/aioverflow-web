@@ -82,7 +82,7 @@ async function callOpenAI(systemPrompt, userMessage) {
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       max_tokens: 2048,
       response_format: { type: "json_object" },
       messages: [
