@@ -9,7 +9,7 @@ import { Work } from "@/components/landing/work";
 export const metadata: Metadata = {
   title: "Products & work",
   description:
-    "Our own AI products — ScribeDesk and RetailOS — plus custom AI solutions we've built and run for clients.",
+    "Our own AI products — ScribeDesk and Sell OS — plus custom AI solutions we've built and run for clients.",
   alternates: { canonical: "/products" },
 };
 

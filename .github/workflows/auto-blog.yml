@@ -1,0 +1,40 @@
+name: Auto Blog Post
+
+on:
+  schedule:
+    # 6:00 AM IST = 00:30 UTC, Monday–Friday
+    - cron: "30 0 * * 1-5"
+  workflow_dispatch:
+    # Allow manual trigger for testing
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        run: node scripts/generate-blog-post.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "AI Overflow Blog Bot"
+          git config user.email "aioverflow.ml@gmail.com"
+          git add content/blog/
+          git diff --cached --quiet && echo "No new post generated (topic already exists or API error)" || \
+            git commit -m "blog: auto post $(date +%Y-%m-%d)" && git push

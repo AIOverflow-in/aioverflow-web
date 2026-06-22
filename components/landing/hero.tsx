@@ -116,7 +116,7 @@ export function Hero() {
                 <p className="font-mono-label text-foreground/50">We run our own</p>
                 <ul className="mt-3 flex flex-col gap-2 text-foreground/85">
                   <li>ScribeDesk — clinical AI scribe</li>
-                  <li>RetailOS — pharmacy POS</li>
+                  <li>Sell OS — pharmacy POS</li>
                 </ul>
               </div>
             </div>

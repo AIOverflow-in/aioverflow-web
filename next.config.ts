@@ -7,6 +7,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: "/products/retailos", destination: "/products/sellos", permanent: true },
+    ];
+  },
   poweredByHeader: false,
   compress: true,
   images: {

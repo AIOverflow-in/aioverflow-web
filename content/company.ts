@@ -11,7 +11,7 @@ export const company = {
   location: "India",
   foundedYear: 2021,
   social: {
-    linkedin: "https://www.linkedin.com/company/ai-overflow/",
+    linkedin: "https://www.linkedin.com/company/103712031/",
     github: "https://github.com/AIOverflow-in",
     twitter: "",
   },
@@ -25,7 +25,7 @@ export const company = {
   // Kept for the /about "background" line — competitions placed in, not clients.
   competitionRecord: { finals: "20+", topThree: "10" },
   // What we sell. Services lead; "Custom AI products" is where our own-product
-  // track record (ScribeDesk, RetailOS) becomes proof for client work.
+  // track record (ScribeDesk, Sell OS) becomes proof for client work.
   services: [
     {
       number: "01",

@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { EngagementProvider } from "@/components/shared/engagement-provider";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { company } from "@/content/company";
 import { founders } from "@/content/founders";
 import { siteUrl } from "@/lib/site";
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     "AI agents",
     "AI integration",
     "ScribeDesk",
-    "RetailOS",
+    "Sell OS",
     "clinical AI scribe",
     "AI for business",
   ],
@@ -161,6 +162,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ScrollToTop />
         <EngagementProvider />
         <Navbar />
         <main>{children}</main>

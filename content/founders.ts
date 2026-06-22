@@ -21,7 +21,7 @@ export const founders: Founder[] = [
     shortBio: "Builds AI systems end to end, from research to production.",
     longBio:
       "Subhanu leads AI engineering at AI Overflow, owning the model and platform work behind ScribeDesk and the team's custom builds. He's most at home turning a research idea into something that holds up under real users and real data.",
-    linkedin: "https://www.linkedin.com/in/subhanu-sankar-roy/",
+    linkedin: "https://www.linkedin.com/in/subhanusroy/",
     github: "https://github.com/AIOverflow-in",
     photo: "/founders/subhanu.jpg",
   },
@@ -32,7 +32,7 @@ export const founders: Founder[] = [
     shortBio: "Ships products. Years across data, ML, and full-stack.",
     longBio:
       "Chethan leads product and operations at AI Overflow, from first scoping call to the system running in production. He's shipped across healthcare, retail, and maritime, with a bias for tight feedback loops and getting real value in front of users early.",
-    linkedin: "https://www.linkedin.com/in/chethan-reddy/",
+    linkedin: "https://www.linkedin.com/in/achethanreddy/",
     github: "https://github.com/chethanreddy123",
     email: "aioverflow.ml@gmail.com",
     photo: "/founders/chethan.jpg",

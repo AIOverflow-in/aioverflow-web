@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { DemoEmbed } from "@/components/product/demo-embed";
 import { Reveal } from "@/components/shared/reveal";
@@ -111,13 +111,23 @@ export default async function ProductPage({
                 {product.description}
               </p>
             </div>
-            <div>
+            <div className="flex flex-col items-start gap-3">
               <Link
                 href={product.cta.href}
                 className={buttonVariants({ size: "lg" })}
               >
                 {product.cta.label} <ArrowRight size={16} />
               </Link>
+              {product.url && (
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline inline-flex items-center gap-1.5 font-mono-label text-foreground/60 hover:text-foreground"
+                >
+                  Visit website <ArrowUpRight size={12} />
+                </a>
+              )}
             </div>
           </div>
         </div>

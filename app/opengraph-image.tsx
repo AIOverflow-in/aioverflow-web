@@ -89,7 +89,7 @@ export default function OpengraphImage() {
           <span>·</span>
           <span>ScribeDesk</span>
           <span>·</span>
-          <span>RetailOS</span>
+          <span>Sell OS</span>
         </div>
       </div>
     ),

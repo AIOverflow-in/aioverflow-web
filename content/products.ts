@@ -1,7 +1,7 @@
 export type ProductDemo =
   | { kind: "iframe"; src: string; title: string }
   | { kind: "video"; poster: string; src: string }
-  | { kind: "mock"; component: "scribedesk" | "retailos" }
+  | { kind: "mock"; component: "scribedesk" | "sellos" }
   | { kind: "screenshots"; images: { src: string; alt: string }[] };
 
 export type Product = {
@@ -12,6 +12,7 @@ export type Product = {
   status: "live" | "beta" | "coming-soon";
   industry: string;
   accent: string;
+  url?: string;
   features: { title: string; description: string }[];
   demo: ProductDemo;
   cta: { label: string; href: string };
@@ -55,6 +56,7 @@ export const products: Product[] = [
     ],
     demo: { kind: "mock", component: "scribedesk" },
     cta: { label: "Book a demo", href: "/contact?product=scribedesk" },
+    url: "https://scribedesk.app/",
     trust: {
       label: "Built for clinical trust",
       title: "A clinician is always in the loop.",
@@ -70,14 +72,15 @@ export const products: Product[] = [
     },
   },
   {
-    slug: "retailos",
-    name: "RetailOS",
+    slug: "sellos",
+    name: "Sell OS",
     tagline: "A fast, GST-ready POS for Indian medical shops.",
     description:
       "A minimalist, multi-tenant point-of-sale built for Indian pharmacies and medical shops. Billing, batch-level inventory, customer history, and GST-ready reports — fast enough to keep up with a busy counter.",
     status: "beta",
     industry: "Retail",
     accent: "#a78bfa",
+    url: "https://www.sellos.in/",
     features: [
       {
         title: "Counter-speed billing",
@@ -95,8 +98,8 @@ export const products: Product[] = [
           "Each shop runs in its own isolated tenant, with GST reports ready to file and a super-admin view for operators running many stores.",
       },
     ],
-    demo: { kind: "mock", component: "retailos" },
-    cta: { label: "Book a demo", href: "/contact?product=retailos" },
+    demo: { kind: "mock", component: "sellos" },
+    cta: { label: "Book a demo", href: "/contact?product=sellos" },
     trust: {
       label: "Reliable at the counter",
       title: "Your shop, your data.",

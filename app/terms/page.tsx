@@ -21,7 +21,7 @@ This site is for information about AI Overflow, our products, and our services. 
 
 ## Our content
 
-The content, design, and brands on this site (including ScribeDesk and RetailOS) belong to AI Overflow. Our blog posts are ours; feel free to quote them with attribution and a link.
+The content, design, and brands on this site (including ScribeDesk and Sell OS) belong to AI Overflow. Our blog posts are ours; feel free to quote them with attribution and a link.
 
 ## No warranty
 
@@ -29,7 +29,7 @@ The site and its content are provided "as is," for general information. Nothing 
 
 ## Products
 
-ScribeDesk and RetailOS are described here for information. Access to the products themselves is governed by their own terms, provided when you sign up or start a pilot.
+ScribeDesk and Sell OS are described here for information. Access to the products themselves is governed by their own terms, provided when you sign up or start a pilot.
 
 ## Contact
 

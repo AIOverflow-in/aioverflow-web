@@ -47,7 +47,7 @@ export function RetailosMock() {
           <span className="grid h-7 w-7 place-items-center border border-foreground/30">
             <Receipt size={12} />
           </span>
-          RetailOS · Billing
+          Sell OS · Billing
         </div>
         <div className="flex gap-px border border-border-strong">
           <button

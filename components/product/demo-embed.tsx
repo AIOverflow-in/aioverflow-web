@@ -35,7 +35,7 @@ export function DemoEmbed({ demo }: { demo: ProductDemo }) {
         />
       );
     case "mock":
-      return demo.component === "scribedesk" ? <ScribedeskMock /> : <RetailosMock />;
+      return demo.component === "sellos" ? <RetailosMock /> : <ScribedeskMock />;
     case "screenshots":
       return (
         <div className="grid gap-4 sm:grid-cols-2">
