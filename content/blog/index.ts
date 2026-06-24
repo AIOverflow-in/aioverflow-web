@@ -1,6 +1,7 @@
 import type { BlogPost } from "./types";
 import { post as maritimeTechDigitizingShipAudits } from "./posts/2026-06-22-maritime-tech-digitizing-ship-audits";
 import { post as aiInHealthcareWhatCliniciansTrustReject } from "./posts/2026-06-23-ai-in-healthcare-what-clinicians-trust-reject";
+import { post as whyEvalsMatterMoreThanPromptEngineering } from "./posts/2026-06-24-why-evals-matter-more-than-prompt-engineering";
 import { post as agenticAutomationThatWorks } from "./posts/agentic-automation-that-works";
 import { post as maritimeAuditsSpreadsheetToPlatform } from "./posts/maritime-audits-spreadsheet-to-platform";
 import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
@@ -8,7 +9,7 @@ import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
 export type { BlogPost } from "./types";
 
 // Source list. Order here doesn't matter — getAllPosts() sorts by date.
-const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
+const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
 
 export function getAllPosts(): BlogPost[] {
   return [...all].sort((a, b) => (a.date < b.date ? 1 : -1));
