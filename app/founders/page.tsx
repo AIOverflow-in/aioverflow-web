@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Linkedin, Mail } from "lucide-react";
 import { founders } from "@/content/founders";
 import { Reveal } from "@/components/shared/reveal";
@@ -39,15 +40,14 @@ export default function FoundersPage() {
                 }`}
               >
                 <div className="flex items-start gap-6">
-                  <div
-                    aria-hidden
-                    className="grid h-20 w-20 shrink-0 place-items-center border border-foreground text-display text-2xl"
-                  >
-                    {f.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
+                  <div className="relative h-28 w-28 shrink-0 overflow-hidden border border-foreground">
+                    <Image
+                      src={f.photo}
+                      alt={f.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="112px"
+                    />
                   </div>
                   <div>
                     <h2 className="text-display text-3xl md:text-4xl">{f.name}</h2>

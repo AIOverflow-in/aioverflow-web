@@ -24,9 +24,10 @@ export function CyclingWord({
   }, [words.length, intervalMs]);
 
   return (
-    <span className="relative inline-block overflow-hidden align-baseline">
+    <span className="relative inline-block overflow-hidden align-baseline pr-[0.12em]">
       {/* Sizing ghost: fills the natural width of the longest word so the
-          following content doesn't reflow as the active word changes. */}
+          following content doesn't reflow as the active word changes.
+          pr-[0.12em] gives room for italic glyph overhang on the trailing "s". */}
       <span aria-hidden className="invisible block whitespace-nowrap">
         {words.reduce((a, b) => (b.length > a.length ? b : a), words[0])}
       </span>

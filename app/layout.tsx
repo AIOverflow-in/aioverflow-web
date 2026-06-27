@@ -6,6 +6,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { EngagementProvider } from "@/components/shared/engagement-provider";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import { TopBanner } from "@/components/shared/top-banner";
 import { company } from "@/content/company";
 import { founders } from "@/content/founders";
 import { siteUrl } from "@/lib/site";
@@ -164,6 +165,7 @@ export default function RootLayout({
         />
         <ScrollToTop />
         <EngagementProvider />
+        <TopBanner />
         <Navbar />
         <main>{children}</main>
         <Footer />
