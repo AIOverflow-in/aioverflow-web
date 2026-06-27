@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -136,6 +137,19 @@ export default async function BlogPostPage({
             </div>
           </div>
         </header>
+
+        {post.image && (
+          <div className="relative aspect-[3/2] w-full overflow-hidden border-b border-border sm:aspect-[16/7]">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              priority
+              className="object-cover grayscale"
+              sizes="100vw"
+            />
+          </div>
+        )}
 
         <div className="container-page py-16 md:py-24">
           <PostBody body={post.body} />

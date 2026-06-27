@@ -10,4 +10,6 @@ export type BlogPost = {
   tags: string[];
   // Markdown. Rendered with react-markdown + remark-gfm.
   body: string;
+  // Hero image path (relative to /public). Auto-generated posts populate this.
+  image?: string;
 };

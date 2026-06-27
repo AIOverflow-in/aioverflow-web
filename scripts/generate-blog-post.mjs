@@ -14,6 +14,7 @@
 
 import { writeFileSync, readdirSync, mkdirSync } from "fs";
 import { join, dirname, basename } from "path";
+import { Buffer } from "buffer";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -99,6 +100,50 @@ async function callOpenAI(systemPrompt, userMessage) {
 
   const data = await res.json();
   return data.choices[0].message.content;
+}
+
+// ─── OpenAI image generation ──────────────────────────────────────────────
+async function generateImage(title, slug, date) {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) throw new Error("OPENAI_API_KEY is not set");
+
+  const imagePrompt = `A striking, minimalist editorial illustration for a tech blog post titled: "${title}".
+Style: clean, modern, black and white with subtle geometric elements. Abstract and professional. No text or typography in the image.`;
+
+  const res = await fetch("https://api.openai.com/v1/images/generations", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${key}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "gpt-image-1",
+      prompt: imagePrompt,
+      n: 1,
+      size: "1536x1024",
+      quality: "medium",
+      output_format: "png",
+    }),
+  });
+
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`OpenAI Images API ${res.status}: ${body}`);
+  }
+
+  const data = await res.json();
+  const b64 = data.data[0].b64_json;
+  const imgBuffer = Buffer.from(b64, "base64");
+
+  const imagesDir = join(ROOT, "public", "blog", "images");
+  mkdirSync(imagesDir, { recursive: true });
+
+  const imgFilename = `${date}-${slug}.png`;
+  const imgPath = join(imagesDir, imgFilename);
+  writeFileSync(imgPath, imgBuffer);
+
+  console.log(`Image written → public/blog/images/${imgFilename}`);
+  return `/blog/images/${imgFilename}`;
 }
 
 // ─── Regenerate index.ts from posts directory ─────────────────────────────
@@ -211,20 +256,32 @@ try {
 const required = ["slug", "title", "description", "tags", "body"];
 for (const key of required) {
   if (!postData[key]) {
-    console.error(`Missing field in Claude response: ${key}`);
+    console.error(`Missing field in OpenAI response: ${key}`);
     process.exit(1);
   }
 }
 
+const postSlug = toKebab(postData.slug);
+
+// Generate hero image
+console.log("Generating hero image with gpt-image-1...");
+let imagePath;
+try {
+  imagePath = await generateImage(postData.title, postSlug, dateStr);
+} catch (err) {
+  console.warn(`Image generation failed (post will be published without image): ${err.message}`);
+}
+
 // Build the full BlogPost object
 const fullPost = {
-  slug: toKebab(postData.slug),
+  slug: postSlug,
   title: postData.title,
   description: postData.description,
   date: dateStr,
   authorSlug,
   tags: postData.tags,
   body: postData.body,
+  ...(imagePath ? { image: imagePath } : {}),
 };
 
 // Write the TypeScript post file
