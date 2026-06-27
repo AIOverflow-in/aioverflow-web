@@ -1,0 +1,16 @@
+import type { BlogPost } from "../types";
+
+export const post: BlogPost = {
+  "slug": "agentic-ai-human-approval",
+  "title": "Agentic AI: Deciding When Automation Needs Human Approval",
+  "description": "Navigating when AI automation should pause for human input during decision-making processes.",
+  "date": "2026-06-27",
+  "authorSlug": "chethan-reddy",
+  "tags": [
+    "AI Automation",
+    "Human Oversight",
+    "Agentic AI"
+  ],
+  "body": "In our work at AI Overflow, we often encounter the complex decision: when should an automated system pause to seek human approval? This question strikes at the heart of designing agentic AI systems, those capable of autonomous decision-making. The trade-offs between efficiency, accuracy, and oversight require careful consideration. Let's explore how we approach this dilemma.\n\n## Balancing Autonomy and Accountability\n\nWhen we build AI systems, one of our primary goals is to balance autonomy with accountability. Full autonomy can drive efficiency, handling tasks at speeds and accuracies beyond human capabilities. However, accountability ensures that when a task might affect outcomes critically, there's a necessary check in place. For example, in ScribeDesk, our clinical documentation AI, accuracy and patient safety are paramount. We opt for human approval for key decisions involving complex interpretations or potential ambiguities. This ensures that our AI's efficiency does not compromise care quality.\n\n## Contextual Sensitivity of Decisions\n\nAgentic AI systems need to be contextually sensitive. This means determining when a decision's impact is significant enough to warrant human intervention. A system managing pharmacy stock in Sell OS, for example, might require approval for unusually large orders or when anomalies are detected. These checks act as safety nets, providing a review point for potential errors or fraudulent activities. In contrast, routine low-impact tasks, like restocking commonly used items under a price threshold, can continue autonomously, increasing efficiency.\n\n## Designing for Transparency and Trust\n\nAn often-overlooked factor is designing AI systems for transparency, which fosters user trust and eases the intervention process when needed. By keeping stakeholders informed of both the capabilities and limitations of our AI systems, we set realistic expectations for when and why human approval might be necessary. In practice, this means providing clear, actionable insights and audit trails that explain the AI's decisions. In bonus, stakeholders—be they medical providers or retail managers—feel empowered and informed, ready to step in when alerted by the system.\n\nWhether designing AI that autonomously writes clinical notes or manages retail inventory, the core principle remains: human approval processes should enhance the AI system's effectiveness, not hinder its potential. By carefully weighing the impact, context, and the need for transparency, we make deliberate choices that serve both business goals and ethical standards.\n\nIf you're grappling with similar questions in your AI endeavors, we'd be happy to discuss approaches that align with your specific needs. Reach out to us directly to explore [your problem or goal here](/contact).",
+  "image": "/blog/images/2026-06-27-agentic-ai-human-approval.png"
+};
