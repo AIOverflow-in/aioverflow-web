@@ -7,6 +7,7 @@ import { post as reducingClinicalAdminLoadAiScribesIndia } from "./posts/2026-06
 import { post as agenticAiHumanApproval } from "./posts/2026-06-27-agentic-ai-human-approval";
 import { post as whyAiProjectsFailOneQuestionPredictsSuccess } from "./posts/2026-06-29-why-ai-projects-fail-one-question-predicts-success";
 import { post as agenticAutomationForOperationsTeams2025 } from "./posts/2026-06-30-agentic-automation-for-operations-teams-2025";
+import { post as aiClinicalDocumentationReducingBurnout } from "./posts/2026-07-01-ai-clinical-documentation-reducing-burnout";
 import { post as agenticAutomationThatWorks } from "./posts/agentic-automation-that-works";
 import { post as maritimeAuditsSpreadsheetToPlatform } from "./posts/maritime-audits-spreadsheet-to-platform";
 import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
@@ -14,7 +15,7 @@ import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
 export type { BlogPost } from "./types";
 
 // Source list. Order here doesn't matter — getAllPosts() sorts by date.
-const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
+const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
 
 export function getAllPosts(): BlogPost[] {
   return [...all].sort((a, b) => (a.date < b.date ? 1 : -1));
