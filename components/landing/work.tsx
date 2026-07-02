@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionLabel } from "@/components/shared/section-label";
 import { caseStudies } from "@/content/products";
@@ -63,6 +64,17 @@ export function Work() {
                     </li>
                   ))}
                 </ul>
+
+                {c.url && (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline mt-6 inline-flex items-center gap-1.5 font-mono-label text-foreground/60 hover:text-foreground"
+                  >
+                    Visit site <ArrowUpRight size={12} />
+                  </a>
+                )}
               </article>
             </Reveal>
           ))}

@@ -129,6 +129,7 @@ export type CaseStudy = {
   summary: string;
   detail: string;
   outcomes: string[];
+  url?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -161,6 +162,24 @@ export const caseStudies: CaseStudy[] = [
     outcomes: [
       "Structured passage-planning workflow",
       "Built on the same production stack as our other platforms",
+    ],
+  },
+  {
+    slug: "qasr-alshar-salon",
+    name: "Qasr Alshar Salon",
+    client: "A luxury beauty salon, Dubai",
+    industry: "Beauty & Hospitality",
+    status: "live",
+    url: "https://qasralsharsalon.com/",
+    summary:
+      "A luxury booking website, real-time appointment system, and admin dashboard for a multicultural beauty salon in Dubai — built to convert visitors and outrank competitors organically.",
+    detail:
+      "Qasr Alshar Salon needed more than a brochure site. We built a gold-on-black luxury web experience with a real-time slot picker (Dubai timezone aware, capacity-controlled server-side), a full admin dashboard for services, pricing, opening hours, and blocked dates, and an AI-powered SEO blog that publishes locally targeted articles every alternate day. Bilingual-ready — English ships complete, with Arabic RTL built in.",
+    outcomes: [
+      "Real-time booking with double-booking prevention and automated email confirmations",
+      "Admin dashboard: services, pricing, hours, blocked dates, and blog management in one place",
+      "AI SEO blog auto-publishing every other day — targeting Dubai long-tail service keywords",
+      "Bilingual (English + Arabic RTL) from the first release",
     ],
   },
 ];
