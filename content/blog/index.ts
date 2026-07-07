@@ -11,6 +11,7 @@ import { post as aiClinicalDocumentationReducingBurnout } from "./posts/2026-07-
 import { post as howToScopeAnAiProjectCorrectly } from "./posts/2026-07-02-how-to-scope-an-ai-project-correctly";
 import { post as hiddenCostsRunningLlmsProduction } from "./posts/2026-07-03-hidden-costs-running-llms-production";
 import { post as pharmacyPosSystemsIndiaMoveBeyondExcel } from "./posts/2026-07-06-pharmacy-pos-systems-india-move-beyond-excel";
+import { post as documentAutomationUnglamorousHighRoi } from "./posts/2026-07-07-document-automation-unglamorous-high-roi";
 import { post as agenticAutomationThatWorks } from "./posts/agentic-automation-that-works";
 import { post as maritimeAuditsSpreadsheetToPlatform } from "./posts/maritime-audits-spreadsheet-to-platform";
 import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
@@ -18,7 +19,7 @@ import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
 export type { BlogPost } from "./types";
 
 // Source list. Order here doesn't matter — getAllPosts() sorts by date.
-const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
+const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, documentAutomationUnglamorousHighRoi, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
 
 export function getAllPosts(): BlogPost[] {
   return [...all].sort((a, b) => (a.date < b.date ? 1 : -1));
