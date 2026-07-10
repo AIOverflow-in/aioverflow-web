@@ -14,6 +14,7 @@ import { post as pharmacyPosSystemsIndiaMoveBeyondExcel } from "./posts/2026-07-
 import { post as documentAutomationUnglamorousHighRoi } from "./posts/2026-07-07-document-automation-unglamorous-high-roi";
 import { post as evaluateAiVendorWithoutGettingSoldTo } from "./posts/2026-07-08-evaluate-ai-vendor-without-getting-sold-to";
 import { post as differenceBetweenAiAgentsAndCopilots } from "./posts/2026-07-09-difference-between-ai-agents-and-copilots";
+import { post as smallVsFrontierModelPracticalGuide } from "./posts/2026-07-10-small-vs-frontier-model-practical-guide";
 import { post as agenticAutomationThatWorks } from "./posts/agentic-automation-that-works";
 import { post as maritimeAuditsSpreadsheetToPlatform } from "./posts/maritime-audits-spreadsheet-to-platform";
 import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
@@ -21,7 +22,7 @@ import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
 export type { BlogPost } from "./types";
 
 // Source list. Order here doesn't matter — getAllPosts() sorts by date.
-const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, documentAutomationUnglamorousHighRoi, evaluateAiVendorWithoutGettingSoldTo, differenceBetweenAiAgentsAndCopilots, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
+const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, documentAutomationUnglamorousHighRoi, evaluateAiVendorWithoutGettingSoldTo, differenceBetweenAiAgentsAndCopilots, smallVsFrontierModelPracticalGuide, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
 
 export function getAllPosts(): BlogPost[] {
   return [...all].sort((a, b) => (a.date < b.date ? 1 : -1));
