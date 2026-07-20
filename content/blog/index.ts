@@ -20,6 +20,7 @@ import { post as evalsVsPromptEngineeringProductionAi } from "./posts/2026-07-14
 import { post as aiImplementationPlaybookStartups } from "./posts/2026-07-15-ai-implementation-playbook-startups";
 import { post as reducingClinicalAdminAiScribesIndianHospitals } from "./posts/2026-07-16-reducing-clinical-admin-ai-scribes-indian-hospitals";
 import { post as agenticAiHumanApproval } from "./posts/2026-07-17-agentic-ai-human-approval";
+import { post as agenticAutomationOperationsTeams2025 } from "./posts/2026-07-20-agentic-automation-operations-teams-2025";
 import { post as agenticAutomationThatWorks } from "./posts/agentic-automation-that-works";
 import { post as maritimeAuditsSpreadsheetToPlatform } from "./posts/maritime-audits-spreadsheet-to-platform";
 import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
@@ -27,7 +28,7 @@ import { post as whenAiActuallyFits } from "./posts/when-ai-actually-fits";
 export type { BlogPost } from "./types";
 
 // Source list. Order here doesn't matter — getAllPosts() sorts by date.
-const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, documentAutomationUnglamorousHighRoi, evaluateAiVendorWithoutGettingSoldTo, differenceBetweenAiAgentsAndCopilots, smallVsFrontierModelPracticalGuide, aiInHealthcareClinicianTrustIssues, evalsVsPromptEngineeringProductionAi, aiImplementationPlaybookStartups, reducingClinicalAdminAiScribesIndianHospitals, agenticAiHumanApproval, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
+const all: BlogPost[] = [maritimeTechDigitizingShipAudits, aiInHealthcareWhatCliniciansTrustReject, whyEvalsMatterMoreThanPromptEngineering, aiImplementationPlaybookEarlyStageStartups, reducingClinicalAdminLoadAiScribesIndia, agenticAiHumanApproval, whyAiProjectsFailOneQuestionPredictsSuccess, agenticAutomationForOperationsTeams2025, aiClinicalDocumentationReducingBurnout, howToScopeAnAiProjectCorrectly, hiddenCostsRunningLlmsProduction, pharmacyPosSystemsIndiaMoveBeyondExcel, documentAutomationUnglamorousHighRoi, evaluateAiVendorWithoutGettingSoldTo, differenceBetweenAiAgentsAndCopilots, smallVsFrontierModelPracticalGuide, aiInHealthcareClinicianTrustIssues, evalsVsPromptEngineeringProductionAi, aiImplementationPlaybookStartups, reducingClinicalAdminAiScribesIndianHospitals, agenticAiHumanApproval, agenticAutomationOperationsTeams2025, agenticAutomationThatWorks, maritimeAuditsSpreadsheetToPlatform, whenAiActuallyFits];
 
 export function getAllPosts(): BlogPost[] {
   return [...all].sort((a, b) => (a.date < b.date ? 1 : -1));
