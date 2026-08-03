@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Linkedin, Mail } from "lucide-react";
-import { founders } from "@/content/founders";
+import { founders, foundingTeam, initials } from "@/content/founders";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionLabel } from "@/components/shared/section-label";
 
 export const metadata: Metadata = {
   title: "Founders",
   description:
-    "Meet the co-founders behind AI Overflow — Subhanu Sankar Roy and Chethan Reddy — who build and operate production AI systems.",
+    "Meet the founding team behind AI Overflow — co-founders Subhanu Sankar Roy and Chethan Reddy, and the people who build and operate production AI systems with them.",
   alternates: { canonical: "/founders" },
 };
 
@@ -24,8 +24,8 @@ export default function FoundersPage() {
           <SectionLabel>Team</SectionLabel>
           <h1 className="text-display mt-6 text-6xl md:text-9xl">Founders.</h1>
           <p className="mt-8 max-w-2xl text-lg text-foreground/70 md:text-xl">
-            Two co-founders who&apos;ve been shipping AI products together for
-            years.
+            Two co-founders and a founding team who&apos;ve been shipping AI
+            products together for years.
           </p>
         </div>
       </section>
@@ -84,6 +84,62 @@ export default function FoundersPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-border py-24 md:py-32">
+        <div className="container-page">
+          <Reveal className="max-w-3xl">
+            <SectionLabel>Founding team</SectionLabel>
+            <h2 className="text-display mt-6 text-4xl md:text-6xl">
+              The people behind the work.
+            </h2>
+          </Reveal>
+
+          <ul className="mt-16 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+            {foundingTeam.map((m, i) => (
+              <Reveal key={m.slug} delay={i * 0.06} as="li">
+                <div className="flex h-full items-center gap-5 bg-background p-6 md:p-8">
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden border border-foreground">
+                    {m.photo ? (
+                      <Image
+                        src={m.photo}
+                        alt={m.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="64px"
+                      />
+                    ) : (
+                      <span
+                        aria-hidden
+                        className="text-display flex h-full w-full items-center justify-center text-xl text-foreground/55"
+                      >
+                        {initials(m.name)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-display text-xl md:text-2xl">
+                      {m.name}
+                    </h3>
+                    {m.role && (
+                      <p className="font-mono-label mt-2 text-foreground/55">
+                        {m.role}
+                      </p>
+                    )}
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 font-mono-label text-foreground/70 underline decoration-border-strong underline-offset-4 transition-colors hover:text-foreground"
+                    >
+                      <Linkedin size={12} /> LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
     </>
