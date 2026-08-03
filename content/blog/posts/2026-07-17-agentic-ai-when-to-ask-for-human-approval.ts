@@ -1,7 +1,7 @@
 import type { BlogPost } from "../types";
 
 export const post: BlogPost = {
-  "slug": "agentic-ai-human-approval",
+  "slug": "agentic-ai-when-to-ask-for-human-approval",
   "title": "Agentic AI: Deciding When to Ask for Human Approval",
   "description": "Explore how to implement human-in-the-loop workflows for AI agents, ensuring reliability and trust.",
   "date": "2026-07-17",

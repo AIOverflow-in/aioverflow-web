@@ -1,7 +1,7 @@
 import type { BlogPost } from "../types";
 
 export const post: BlogPost = {
-  "slug": "hidden-costs-running-llms-production",
+  "slug": "true-cost-of-llms-in-production",
   "title": "The Hidden Costs of Running LLMs in Production Nobody Talks About",
   "description": "Explore the overlooked financial and operational costs of deploying large language models in production settings.",
   "date": "2026-07-23",

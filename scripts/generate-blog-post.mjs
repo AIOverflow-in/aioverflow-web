@@ -12,7 +12,7 @@
  * Designed to run inside GitHub Actions on a cron schedule.
  */
 
-import { writeFileSync, readdirSync, mkdirSync } from "fs";
+import { writeFileSync, readFileSync, readdirSync, mkdirSync, existsSync } from "fs";
 import { join, dirname, basename } from "path";
 import { Buffer } from "buffer";
 import { fileURLToPath } from "url";
@@ -69,6 +69,35 @@ function toVarName(filename) {
   const base = basename(filename, ".ts");
   const stripped = base.replace(/^\d{4}-\d{2}-\d{2}-/, "");
   return stripped.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+}
+
+/** Slugs already published, read straight from the post files. */
+function existingSlugs() {
+  const slugs = new Set();
+  if (!existsSync(POSTS_DIR)) return slugs;
+  for (const f of readdirSync(POSTS_DIR).filter((f) => f.endsWith(".ts"))) {
+    const src = readFileSync(join(POSTS_DIR, f), "utf8");
+    const match = src.match(/"?slug"?:\s*"([^"]+)"/);
+    if (match) slugs.add(match[1]);
+  }
+  return slugs;
+}
+
+/**
+ * The topic list cycles, so the model regularly proposes a slug we already
+ * published. Two posts sharing a slug collide on the route AND produce the
+ * same filename-derived import name, which breaks the build — so suffix it.
+ */
+function uniqueSlug(slug, taken) {
+  if (!taken.has(slug)) return slug;
+  for (let n = 2; n < 100; n++) {
+    const candidate = `${slug}-${n}`;
+    if (!taken.has(candidate)) {
+      console.warn(`Slug "${slug}" already exists — using "${candidate}".`);
+      return candidate;
+    }
+  }
+  throw new Error(`Could not find a free slug for "${slug}"`);
 }
 
 // ─── OpenAI API call ──────────────────────────────────────────────────────
@@ -153,6 +182,15 @@ function regenerateIndex() {
     .sort(); // alphabetical = date-prefixed files come out chronological
 
   const varNames = files.map(toVarName);
+
+  // Duplicate import names are a hard build failure in Next — fail here, where
+  // the message is actionable, rather than in the deploy.
+  const dupes = varNames.filter((v, i) => varNames.indexOf(v) !== i);
+  if (dupes.length) {
+    throw new Error(
+      `Duplicate post identifiers (rename the offending post files): ${[...new Set(dupes)].join(", ")}`,
+    );
+  }
 
   const imports = files
     .map((f, i) => `import { post as ${varNames[i]} } from "./posts/${basename(f, ".ts")}";`)
@@ -261,7 +299,7 @@ for (const key of required) {
   }
 }
 
-const postSlug = toKebab(postData.slug);
+const postSlug = uniqueSlug(toKebab(postData.slug), existingSlugs());
 
 // Generate hero image
 console.log("Generating hero image with gpt-image-1...");
