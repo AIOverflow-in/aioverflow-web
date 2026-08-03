@@ -53,6 +53,7 @@ export const team: TeamMember[] = [
     shortBio:
       "Designs how our products look and behave — interfaces, brand, and the details users actually notice.",
     linkedin: "https://www.linkedin.com/in/harsha-vardhan-reddy-98a870278/",
+    photo: "/founders/harsha-vardhan-reddy.jpg",
   },
   {
     slug: "purushoth-dl",
@@ -61,6 +62,7 @@ export const team: TeamMember[] = [
     shortBio:
       "Works on the core AI engineering — the models, pipelines, and evaluation behind our production systems.",
     linkedin: "https://www.linkedin.com/in/purushoth-dl-b2a5a52a7/",
+    photo: "/founders/purushoth-dl.jpg",
   },
   {
     slug: "jacqueline-ekumba",
@@ -69,6 +71,7 @@ export const team: TeamMember[] = [
     shortBio:
       "Strategy — where our AI capabilities meet real market and client priorities.",
     linkedin: "https://www.linkedin.com/in/jacqueline-ekumba-3bba6890/",
+    photo: "/founders/jacqueline-ekumba.jpg",
   },
   {
     slug: "nithin-kumar-reddy-thukakula",
@@ -77,6 +80,7 @@ export const team: TeamMember[] = [
     shortBio:
       "Embeds with clients to take systems from first deployment to everyday use.",
     linkedin: "https://www.linkedin.com/in/nithin-kumar-reddy-thukakula/",
+    photo: "/founders/nithin-kumar-reddy-thukakula.jpg",
   },
 ];
 
