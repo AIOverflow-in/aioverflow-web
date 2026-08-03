@@ -8,7 +8,7 @@ import { EngagementProvider } from "@/components/shared/engagement-provider";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { TopBanner } from "@/components/shared/top-banner";
 import { company } from "@/content/company";
-import { founders, foundingTeam } from "@/content/founders";
+import { founders, team } from "@/content/founders";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -123,10 +123,10 @@ const jsonLd = {
         jobTitle: f.role,
         sameAs: [f.linkedin, f.github].filter(Boolean),
       })),
-      member: foundingTeam.map((m) => ({
+      member: team.map((m) => ({
         "@type": "Person",
         name: m.name,
-        ...(m.role ? { jobTitle: m.role } : {}),
+        jobTitle: m.role,
         sameAs: [m.linkedin],
       })),
       hasOfferCatalog: {

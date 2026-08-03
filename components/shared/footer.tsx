@@ -55,7 +55,7 @@ export function Footer() {
             <ul className="mt-4 text-sm">
               <li><Link href="/services" className={colLink}>Services</Link></li>
               <li><Link href="/blog" className={colLink}>Blog</Link></li>
-              <li><Link href="/founders" className={colLink}>Founders</Link></li>
+              <li><Link href="/founders" className={colLink}>Team</Link></li>
               <li><Link href="/about" className={colLink}>About</Link></li>
               <li><Link href="/contact" className={colLink}>Contact</Link></li>
             </ul>

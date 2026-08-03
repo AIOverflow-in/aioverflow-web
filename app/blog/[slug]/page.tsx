@@ -11,7 +11,7 @@ import {
   readingTimeMinutes,
   formatPostDate,
 } from "@/content/blog";
-import { founders } from "@/content/founders";
+import { team } from "@/content/founders";
 import { siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -26,7 +26,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  const author = founders.find((f) => f.slug === post.authorSlug);
+  const author = team.find((m) => m.slug === post.authorSlug);
   return {
     title: post.title,
     description: post.description,
@@ -58,7 +58,7 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
-  const author = founders.find((f) => f.slug === post.authorSlug);
+  const author = team.find((m) => m.slug === post.authorSlug);
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -8,7 +8,7 @@ import {
   readingTimeMinutes,
   formatPostDate,
 } from "@/content/blog";
-import { founders } from "@/content/founders";
+import { team } from "@/content/founders";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 function authorName(slug: string): string {
-  return founders.find((f) => f.slug === slug)?.name ?? "AI Overflow";
+  return team.find((m) => m.slug === slug)?.name ?? "AI Overflow";
 }
 
 export default function BlogPage() {
