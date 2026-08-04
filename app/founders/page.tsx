@@ -12,17 +12,31 @@ export const metadata: Metadata = {
   alternates: { canonical: "/founders" },
 };
 
-function MemberCard({ m }: { m: TeamMember }) {
+/**
+ * `wide` is for sections holding a single person: the card spans the full
+ * width, so it goes horizontal rather than leaving a stretched empty box.
+ */
+function MemberCard({ m, wide = false }: { m: TeamMember; wide?: boolean }) {
   return (
-    <article className="flex h-full flex-col gap-6 bg-background p-8 md:p-10">
-      <div className="relative h-20 w-20 shrink-0 overflow-hidden border border-foreground">
+    <article
+      className={
+        wide
+          ? "flex h-full flex-col gap-6 bg-background p-8 md:flex-row md:items-start md:gap-10 md:p-10"
+          : "flex h-full flex-col gap-6 bg-background p-8 md:p-10"
+      }
+    >
+      <div
+        className={`relative shrink-0 overflow-hidden border border-foreground ${
+          wide ? "h-20 w-20 md:h-28 md:w-28" : "h-20 w-20"
+        }`}
+      >
         {m.photo ? (
           <Image
             src={m.photo}
             alt={m.name}
             fill
             className="object-cover object-top"
-            sizes="80px"
+            sizes={wide ? "112px" : "80px"}
           />
         ) : (
           <span
@@ -34,35 +48,46 @@ function MemberCard({ m }: { m: TeamMember }) {
         )}
       </div>
 
-      <div>
-        <h3 className="text-display text-2xl md:text-3xl">{m.name}</h3>
-        <p className="font-mono-label mt-2 text-balance text-foreground/55">
-          {m.role}
-        </p>
-      </div>
+      <div
+        className={`flex flex-1 flex-col gap-6 ${wide ? "md:max-w-2xl" : ""}`}
+      >
+        <div>
+          <h3 className="text-display text-2xl md:text-3xl">{m.name}</h3>
+          <p className="font-mono-label mt-2 text-balance text-foreground/55">
+            {m.role}
+          </p>
+        </div>
 
-      <p className="text-pretty text-foreground/75">{m.shortBio}</p>
+        <p className="text-pretty text-foreground/75">{m.shortBio}</p>
 
-      <div className="mt-auto flex flex-wrap gap-3 pt-2">
-        <a
-          href={m.linkedin}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 border border-border-strong px-4 py-2 font-mono-label text-foreground/85 transition-colors hover:bg-foreground hover:text-background"
-        >
-          <Linkedin size={12} /> LinkedIn
-        </a>
-        {m.email && (
+        <div className="mt-auto flex flex-wrap gap-3 pt-2">
           <a
-            href={`mailto:${m.email}`}
+            href={m.linkedin}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 border border-border-strong px-4 py-2 font-mono-label text-foreground/85 transition-colors hover:bg-foreground hover:text-background"
           >
-            <Mail size={12} /> Email
+            <Linkedin size={12} /> LinkedIn
           </a>
-        )}
+          {m.email && (
+            <a
+              href={`mailto:${m.email}`}
+              className="inline-flex items-center gap-2 border border-border-strong px-4 py-2 font-mono-label text-foreground/85 transition-colors hover:bg-foreground hover:text-background"
+            >
+              <Mail size={12} /> Email
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
+}
+
+/** Columns follow head count, so no section ever renders an empty cell. */
+function gridColumns(count: number) {
+  if (count === 1) return "grid-cols-1";
+  if (count === 2) return "md:grid-cols-2";
+  return "md:grid-cols-2 lg:grid-cols-3";
 }
 
 export default function FoundersPage() {
@@ -93,26 +118,32 @@ export default function FoundersPage() {
             id={group.key}
             className="border-b border-border"
           >
-            <div className="container-page flex flex-col gap-4 py-12 md:flex-row md:items-baseline md:justify-between md:py-16">
-              <div>
-                <SectionLabel>{group.label}</SectionLabel>
-                <p className="mt-4 max-w-xl text-lg text-foreground/70">
-                  {group.blurb}
+            <div className="container-page py-16 md:py-20">
+              <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between">
+                <div>
+                  <SectionLabel>{group.label}</SectionLabel>
+                  <p className="mt-4 max-w-xl text-lg text-foreground/70">
+                    {group.blurb}
+                  </p>
+                </div>
+                <p className="font-mono-label text-foreground/45">
+                  {String(members.length).padStart(2, "0")}{" "}
+                  {members.length === 1 ? "person" : "people"}
                 </p>
               </div>
-              <p className="font-mono-label text-foreground/45">
-                {String(members.length).padStart(2, "0")}{" "}
-                {members.length === 1 ? "person" : "people"}
-              </p>
-            </div>
 
-            <ul className="grid gap-px border-t border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-              {members.map((m, i) => (
-                <Reveal key={m.slug} delay={(gi * 0.04) + i * 0.06} as="li">
-                  <MemberCard m={m} />
-                </Reveal>
-              ))}
-            </ul>
+              <ul
+                className={`mt-10 grid gap-px overflow-hidden border border-border bg-border ${gridColumns(
+                  members.length,
+                )}`}
+              >
+                {members.map((m, i) => (
+                  <Reveal key={m.slug} delay={gi * 0.04 + i * 0.06} as="li">
+                    <MemberCard m={m} wide={members.length === 1} />
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
           </section>
         );
       })}

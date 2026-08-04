@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/subhanusroy/",
     github: "https://github.com/AIOverflow-in",
     email: "subhanu12@gmail.com",
-    photo: "/founders/subhanu.png",
+    photo: "/founders/subhanu.jpg",
   },
   {
     slug: "chethan-reddy",
@@ -77,7 +77,7 @@ export const team: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/achethanreddy/",
     github: "https://github.com/chethanreddy123",
     email: "achethanreddy1921@gmail.com",
-    photo: "/founders/chethan.png",
+    photo: "/founders/chethan.jpg",
   },
   {
     slug: "harsha-vardhan-reddy",
