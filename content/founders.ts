@@ -1,7 +1,38 @@
+export type TeamGroupKey = "founders" | "design" | "engineering" | "strategy";
+
+/** Render order of the groups on the team page. */
+export const teamGroups: {
+  key: TeamGroupKey;
+  label: string;
+  blurb: string;
+}[] = [
+  {
+    key: "founders",
+    label: "Founders",
+    blurb: "Set direction, and stay hands-on through delivery.",
+  },
+  {
+    key: "design",
+    label: "Design",
+    blurb: "How everything we ship looks and behaves.",
+  },
+  {
+    key: "engineering",
+    label: "Engineering",
+    blurb: "Models, pipelines, and getting them running in the field.",
+  },
+  {
+    key: "strategy",
+    label: "Strategy",
+    blurb: "Where our capabilities meet market and client priorities.",
+  },
+];
+
 export type TeamMember = {
   slug: string;
   name: string;
   role: string;
+  group: TeamGroupKey;
   /** One-line summary — this is what the card shows. */
   shortBio: string;
   /** Longer profile copy. Kept for per-person pages; not rendered today. */
@@ -16,14 +47,15 @@ export type TeamMember = {
   photo?: string;
 };
 
-// One list, one page — everyone renders in the same card. Photos: drop real
-// headshots at public/founders/<file>.png (matching `photo` below) and they'll
-// replace the initials fallback automatically.
+// One page, grouped by function — `group` places each person under a heading
+// from teamGroups above. Photos: drop a headshot at public/founders/<file>
+// (matching `photo` below); initials render until one exists.
 export const team: TeamMember[] = [
   {
     slug: "subhanu-sankar-roy",
     name: "Subhanu Sankar Roy",
     role: "Co-founder — AI & Engineering",
+    group: "founders",
     isFounder: true,
     shortBio: "AI engineer who builds systems that hold up under real users and real data.",
     longBio:
@@ -37,6 +69,7 @@ export const team: TeamMember[] = [
     slug: "chethan-reddy",
     name: "Chethan Reddy",
     role: "Co-founder — Product & Operations",
+    group: "founders",
     isFounder: true,
     shortBio: "Turns AI research into things businesses actually use.",
     longBio:
@@ -50,6 +83,7 @@ export const team: TeamMember[] = [
     slug: "harsha-vardhan-reddy",
     name: "Harsha Vardhan Reddy",
     role: "Design",
+    group: "design",
     shortBio:
       "Designs how our products look and behave — interfaces, brand, and the details users actually notice.",
     linkedin: "https://www.linkedin.com/in/harsha-vardhan-reddy-98a870278/",
@@ -59,6 +93,7 @@ export const team: TeamMember[] = [
     slug: "purushoth-dl",
     name: "Purushoth DL",
     role: "Core AI Engineering",
+    group: "engineering",
     shortBio:
       "Works on the core AI engineering — the models, pipelines, and evaluation behind our production systems.",
     linkedin: "https://www.linkedin.com/in/purushoth-dl-b2a5a52a7/",
@@ -67,7 +102,8 @@ export const team: TeamMember[] = [
   {
     slug: "jacqueline-ekumba",
     name: "Jacqueline Ekumba",
-    role: "Strategy",
+    role: "Strategist",
+    group: "strategy",
     shortBio:
       "Strategy — where our AI capabilities meet real market and client priorities.",
     linkedin: "https://www.linkedin.com/in/jacqueline-ekumba-3bba6890/",
@@ -76,9 +112,10 @@ export const team: TeamMember[] = [
   {
     slug: "nithin-kumar-reddy-thukakula",
     name: "Nithin Kumar Reddy Thukakula",
-    role: "Forward Deployed Engineer",
+    role: "Core AI Engineer / AI Solution Implementer / Forward Deployed Engineer",
+    group: "engineering",
     shortBio:
-      "Embeds with clients to take systems from first deployment to everyday use.",
+      "Builds the AI systems and takes them into the field — implementation through everyday use.",
     linkedin: "https://www.linkedin.com/in/nithin-kumar-reddy-thukakula/",
     photo: "/founders/nithin-kumar-reddy-thukakula.jpg",
   },
