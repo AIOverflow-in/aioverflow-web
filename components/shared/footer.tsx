@@ -74,6 +74,16 @@ export function Footer() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://aioverflow.tech"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={colLink}
+                >
+                  Global operations ↗
+                </a>
+              </li>
               {company.social.github && (
                 <li>
                   <a
