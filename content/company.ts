@@ -7,7 +7,7 @@ export const company = {
   // One-liner for the services-first hero subhead.
   pitch:
     "We design AI workflows, ship agentic automation, and build custom AI products — and we run our own.",
-  email: "aioverflow.ml@gmail.com",
+  email: "hello@aioverflow.tech",
   location: "India",
   foundedYear: 2021,
   social: {

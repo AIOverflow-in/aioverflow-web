@@ -232,4 +232,4 @@ git checkout master                # back to the current site
 
 ---
 
-Built and operated by **AI Overflow**. Direct: [aioverflow.ml@gmail.com](mailto:aioverflow.ml@gmail.com).
+Built and operated by **AI Overflow**. Direct: [hello@aioverflow.tech](mailto:hello@aioverflow.tech).

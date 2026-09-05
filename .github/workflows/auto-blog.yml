@@ -34,7 +34,7 @@ jobs:
       - name: Commit and push
         run: |
           git config user.name "AI Overflow Blog Bot"
-          git config user.email "aioverflow.ml@gmail.com"
+          git config user.email "hello@aioverflow.tech"
           git add content/blog/ public/blog/
           git diff --cached --quiet && echo "No new post generated (topic already exists or API error)" || \
             git commit -m "blog: auto post $(date +%Y-%m-%d)" && git push
