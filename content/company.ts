@@ -11,7 +11,7 @@ export const company = {
   location: "India",
   foundedYear: 2021,
   social: {
-    linkedin: "https://www.linkedin.com/company/aioverflow/",
+    linkedin: "https://www.linkedin.com/company/aioverflow-tech/",
     github: "https://github.com/AIOverflow-in",
     twitter: "",
   },
