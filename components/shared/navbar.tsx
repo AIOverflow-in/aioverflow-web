@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { BrandMark } from "@/components/brand/brand-mark";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -39,13 +40,8 @@ export function Navbar() {
           href="/"
           className="group flex items-center gap-3 text-base font-medium tracking-tight"
         >
-          <span
-            aria-hidden
-            className="grid h-7 w-7 place-items-center border border-foreground text-[10px] font-semibold tracking-tighter transition-colors group-hover:bg-foreground group-hover:text-background"
-          >
-            AI
-          </span>
-          <span className="font-display text-lg">Overflow</span>
+          <BrandMark className="h-9 w-9 text-violet-700 transition-transform duration-300 group-hover:-rotate-6" />
+          <span className="font-display text-lg font-medium">AIoverflow</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

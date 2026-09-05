@@ -15,8 +15,8 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0a0a0a",
-          color: "#fafafa",
+          background: "#fffaf2",
+          color: "#172554",
           padding: 80,
           fontFamily: "sans-serif",
         }}
@@ -31,24 +31,20 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 56,
-                height: 56,
-                border: "2px solid #fafafa",
-                fontSize: 24,
-                fontWeight: 700,
-                letterSpacing: -1,
-              }}
-            >
-              AI
-            </div>
-            <div style={{ fontSize: 34, fontWeight: 600 }}>Overflow</div>
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="26" cy="33" r="18.5" stroke="#6d28d9" strokeWidth="7" />
+              <path
+                d="M44.5 51.5V13.5H53.5"
+                stroke="#6d28d9"
+                strokeWidth="7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="58" cy="13.5" r="4.5" fill="#f97316" />
+            </svg>
+            <div style={{ fontSize: 34, fontWeight: 600 }}>AIoverflow</div>
           </div>
-          <div style={{ fontSize: 22, color: "#8a8a8a", letterSpacing: 2 }}>
+          <div style={{ fontSize: 22, color: "#6d28d9", letterSpacing: 2 }}>
             AI · OVERFLOW
           </div>
         </div>
@@ -65,7 +61,7 @@ export default function OpengraphImage() {
           >
             We build AI that works.
           </div>
-          <div style={{ fontSize: 30, color: "#b3b3b3", maxWidth: 900 }}>
+          <div style={{ fontSize: 30, color: "#475569", maxWidth: 900 }}>
             Custom AI solutions, agentic automation, and our own products —
             built and run in production.
           </div>
@@ -78,8 +74,8 @@ export default function OpengraphImage() {
             alignItems: "center",
             gap: 16,
             fontSize: 22,
-            color: "#8a8a8a",
-            borderTop: "1px solid #2a2a2a",
+            color: "#4338ca",
+            borderTop: "1px solid rgba(79,70,229,.22)",
             paddingTop: 28,
           }}
         >

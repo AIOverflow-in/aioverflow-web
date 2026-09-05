@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { company } from "@/content/company";
 import { products } from "@/content/products";
+import { BrandMark } from "@/components/brand/brand-mark";
 
 const colLink = "block py-1.5 text-foreground/65 transition-colors hover:text-foreground";
 
@@ -17,13 +18,8 @@ export function Footer() {
               href="/"
               className="inline-flex items-center gap-3 font-display text-2xl"
             >
-              <span
-                aria-hidden
-                className="grid h-9 w-9 place-items-center border border-foreground text-xs font-semibold tracking-tighter"
-              >
-                AI
-              </span>
-              Overflow
+              <BrandMark className="h-10 w-10 text-violet-700" />
+              AIoverflow
             </Link>
             <p className="mt-6 max-w-md text-pretty text-foreground/65">
               {company.description}

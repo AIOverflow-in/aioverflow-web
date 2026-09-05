@@ -128,16 +128,9 @@
       }
 
       .mark {
-        display: grid;
+        display: block;
         width: 29px;
         height: 29px;
-        place-items: center;
-        border: 1px solid var(--ink);
-        color: var(--ink);
-        font-family: var(--mono);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: -0.12em;
       }
 
       .meta {
@@ -394,8 +387,12 @@
     <main class="sheet">
       <header class="topbar">
         <div class="brand">
-          <span class="mark" aria-hidden="true">AO</span>
-          <span>AI Overflow</span>
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="26" cy="33" r="18.5" fill="none" stroke="#6d28d9" stroke-width="7" />
+            <path d="M44.5 51.5V13.5H53.5" fill="none" stroke="#6d28d9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="58" cy="13.5" r="4.5" fill="#f97316" />
+          </svg>
+          <span>AIoverflow</span>
         </div>
         <div class="meta">Company brochure / Practical AI for business<br />India · founded 2021</div>
       </header>

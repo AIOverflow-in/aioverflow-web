@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>AIoverflow mark</title>
+  <circle cx="26" cy="33" r="18.5" stroke="#6D28D9" stroke-width="7"/>
+  <path d="M44.5 51.5V13.5H53.5" stroke="#6D28D9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="58" cy="13.5" r="4.5" fill="#F97316"/>
+</svg>

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Tab favicon — the navbar "AI" mark (bordered box, white on black).
+// Tab favicon — the shared AIoverflow loop mark.
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
@@ -14,26 +14,20 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#000000",
+          background: "#fffaf2",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 54,
-            height: 54,
-            border: "5px solid #ffffff",
-            color: "#ffffff",
-            fontSize: 28,
-            fontWeight: 700,
-            letterSpacing: -2,
-            fontFamily: "sans-serif",
-          }}
-        >
-          AI
-        </div>
+        <svg width="58" height="58" viewBox="0 0 64 64" fill="none">
+          <circle cx="26" cy="33" r="18.5" stroke="#6d28d9" strokeWidth="7" />
+          <path
+            d="M44.5 51.5V13.5H53.5"
+            stroke="#6d28d9"
+            strokeWidth="7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="58" cy="13.5" r="4.5" fill="#f97316" />
+        </svg>
       </div>
     ),
     { ...size }
