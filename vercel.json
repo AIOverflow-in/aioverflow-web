@@ -3,6 +3,11 @@
   "framework": "nextjs",
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://aioverflow.tech/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://aioverflow.tech/:path*",
       "permanent": true
