@@ -1,0 +1,15 @@
+import type { BlogPost } from "../types";
+
+export const post: BlogPost = {
+  "slug": "evaluate-ai-vendor-without-getting-sold-to-2",
+  "title": "How to Evaluate an AI Vendor Without Getting Sold To",
+  "description": "Learn how to assess AI vendors objectively, focusing on real value rather than sales hype.",
+  "date": "2026-11-05",
+  "authorSlug": "subhanu-sankar-roy",
+  "tags": [
+    "AI Vendor",
+    "AI Evaluation",
+    "AI Solutions"
+  ],
+  "body": "When it comes to choosing an AI vendor, it's crucial to focus on the value they can bring to your organization rather than getting swept away by persuasive sales tactics. At AI Overflow, we understand the nuances of building and deploying AI solutions, which gives us insight into evaluating vendors beyond the surface. This guide will help you engage with potential partners more effectively.\n\n## Understanding Your Needs\nThe first step in evaluating an AI vendor is having a clear understanding of your own needs. Ask yourself: What problem are we trying to solve with AI? Do we need a custom solution, or can an off-the-shelf product meet our requirements? Our products, ScribeDesk and Sell OS, cater to specific niches, yet even bespoke solutions start with understanding problems in great detail. Knowing this will allow you to filter vendors based on their ability to meet these needs, rather than how shiny their sales pitch is.\n\n## Asking the Right Questions\nOnce you know your needs, it's time to engage with potential vendors. It's important to ask the tough questions early on. Here are a few key areas to focus on:\n- **Experience and Expertise**: What specific expertise do they bring, and how does it align with your industry?\n- **Implementation Process**: How do they plan to deploy their solution, and what support do they offer post-deployment?\n- **Performance Metrics**: How do they measure success, and can they provide case studies or examples of past successes?\n- **Scalability and Flexibility**: Can their solution grow with your business, and how adaptable are they to changes?\nThese questions will help you gather important insights about the vendor's capability and suitability for your needs.\n\n## Evaluating Without Bias\nSales pitches often include impressive presentations and big promises. But to truly evaluate an AI vendor, it's essential to look beyond these sales techniques. Focus on concrete evidence of their past performance and customer satisfaction. Effective vendors provide trials or demos, allowing you to test their solutions under your operational conditions. In parallel, peer discussions and industry forums can provide real-user feedback that is invaluable in this decision-making process.\n\nIn conclusion, choosing the right AI vendor requires a structured approach. Focus on your requirements, ask incisive questions, and seek out tangible performance evidence. By doing so, you can make an informed decision that benefits your business in the long run. If you're searching for a partner to help realize your AI goals, we're here to assist. Reach out to discuss [your problem or goal here](/contact)."
+};
