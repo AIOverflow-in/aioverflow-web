@@ -1,0 +1,15 @@
+import type { BlogPost } from "../types";
+
+export const post: BlogPost = {
+  "slug": "scope-ai-project-before-coding",
+  "title": "How to Scope an AI Project Before Writing a Single Line of Code",
+  "description": "Learn key strategies to effectively scope and define your AI project before starting any development work.",
+  "date": "2026-11-19",
+  "authorSlug": "subhanu-sankar-roy",
+  "tags": [
+    "AI Project Management",
+    "AI Development",
+    "Project Scoping"
+  ],
+  "body": "Building an AI project is an exciting journey, but it's one that requires careful planning and a clear understanding of the goals, challenges, and constraints involved. Before we dive into coding, it's crucial to scope the project accurately. This helps us stay aligned with business objectives and ensures the efficient use of resources.\n\n## Define the Problem Clearly\n\nThe first step in scoping an AI project is to clearly define the problem you're looking to solve. What business issue or opportunity are you addressing? Vague objectives lead to vague results. Be specific about the problem statement, expected outcomes, and the metrics for success. This clarity will guide the entire project's direction and help in making informed decisions throughout the development process.\n\n## Understand Your Data Landscape\n\nAI thrives on data, and understanding your data landscape is critical before starting any development work. Assess the availability, quality, and suitability of your data for the task at hand. Ask questions like: Do you have enough data? Is it labeled and clean? What kind of preprocessing will it require? Knowing the answers to these questions helps in shaping a realistic project plan and timeline.\n\n## Establish Feasibility and Constraints\n\nNot every AI problem is within easy reach, and it's important to establish the feasibility and constraints early on. Resources such as time, budget, and expertise need to be aligned with the project's complexity and scope. It's equally important to understand any technical constraints or limitations that could impact development. By clearly mapping out these factors, we can avoid significant delays and costly pivots later.\n\n## Set Realistic Milestones\n\nBreaking down the project into smaller, manageable milestones allows for better control and tracking of progress. Define key deliverables and establish a timeline for achieving each stage. These milestones should be aligned with both business objectives and technical requirements. Creating a roadmap not only helps in keeping the team focused but also provides a framework for assessing risks and making adjustments as needed.\n\nEffective AI project scoping is about aligning expectations, managing risks, and setting the foundation for a successful outcome. Whether you're tackling a custom AI solution or enhancing an existing product, taking the time to scope your project thoroughly pays off in the end. If you're ready to discuss how we can help you define and achieve your AI goals, reach out to us. Let's start a conversation about [your problem or goal here](/contact)."
+};
